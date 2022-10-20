@@ -89,6 +89,7 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - treexercise
+    - criterion
 
 tests:
   treexercise-test:
