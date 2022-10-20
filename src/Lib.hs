@@ -110,8 +110,10 @@ instance BinaryTree Tree where
 
   Typeclasses that I'm not sure if they should be implemented for my binary tree.
   #1 I'M NOT SURE
-  - Contravariant <- I guess it could be useful for copying the topology of the tree without the values but I'm not sure
-  - Comonad
+  - Comonad <- can be implemented but I'm not sure what if it's useful for anything
+  - Contravariant <- I guess it could be useful for copying the topology of the
+                   | tree without the values but I've never worked with
+                   | contravariants so not sure how useful this is
 
   Typeclasses that should be implemented for my binary tree
   #2 SHOULD IMPLEMENT
@@ -152,6 +154,9 @@ instance BinaryTree Tree where
 
 -}
 
+-- I tried a couple of similar versions, some of which enforced strictness, but
+-- this version performed best on a simple benchmark I added in Main.hs
+-- (assuming -O2 optimizations)
 toList :: Tree t -> [t]
 toList = toList' []
   where
